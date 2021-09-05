@@ -13,12 +13,18 @@ namespace TesteNBW.Controllers
     [Route("[controller]")]
     public class CountryController : System.Web.Http.ApiController
     {
+
+        CountryRepository repository;
+
+        public CountryController() {
+            repository = new CountryRepository();
+        }
+
         [HttpGet]
-        public String Get()
+        public List<Country> Get()
         {
-            CountryRepository repository = new CountryRepository();
-            repository.Get();
-            return "Aaaaa";
+            //repository.Delete(1);
+            return repository.Get(2);
         }
     }
 }
