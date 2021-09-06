@@ -70,6 +70,8 @@ namespace TesteNBW.Repository
             }
         }
 
+
+
         public void Update(int Id, String Name, String Operation, String CNPJ, int Employee_Amont, String Billing, String Phone_Number, String Mobile_Number, String Address, String District, String City, String Zip_Code, Country country)
         {
             try
@@ -98,8 +100,6 @@ namespace TesteNBW.Repository
                 if (connection.State == ConnectionState.Open)
                     connection.Close();
             }
-
-
         }
 
 
