@@ -24,7 +24,7 @@ namespace TesteNBW.Controllers
         public List<Country> Get()
         {
             //repository.Delete(1);
-            return repository.Get(2);
+            return null; // repository.Get(2);
         }
     }
 }

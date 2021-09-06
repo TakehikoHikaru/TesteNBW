@@ -35,19 +35,17 @@ namespace TesteNBW.Repository
             }
         }
 
-        public List<Country> Get(int id)
+        public Country Get(int id)
         {
             try
             {
                 connection.Open();
                 command.CommandText = $"Select * from Country where Id = {id}";
                 MySqlDataReader reader = command.ExecuteReader();
-                List<Country> countries = new List<Country>();
-                while (reader.Read())
-                {
-                    countries.Add(Parser(reader));
+                if (reader.Read()) {
+                    return Parser(reader);
                 }
-                return countries;
+                return null;
             }
             finally
             {

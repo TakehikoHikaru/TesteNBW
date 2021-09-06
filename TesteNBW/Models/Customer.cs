@@ -11,8 +11,8 @@ namespace TesteNBW.Models
         public String Name { get; set; }
         public String Operation { get; set; }
         public String CNPJ { get; set; }
-        public int EmployeeCount { get; set; }
-        public double Billing { get; set; }
+        public int EmployeeAmont { get; set; }
+        public Decimal Billing { get; set; }
         public String PhoneNumber { get; set; }
         public String MobileNumber { get; set; }
         public String Address { get; set; }
