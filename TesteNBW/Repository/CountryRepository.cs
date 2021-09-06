@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +17,7 @@ namespace TesteNBW.Repository
         static MySqlConnection connection = new MySqlConnection(DataBaseConnection.connString);
         MySqlCommand command = connection.CreateCommand();
 
+        [HttpGet]
         public List<Country> Get() {
             try
             {
@@ -35,6 +37,7 @@ namespace TesteNBW.Repository
             }
         }
 
+        [HttpGet("{id}")]
         public Country Get(int id)
         {
             try
@@ -54,6 +57,7 @@ namespace TesteNBW.Repository
             }
         }
 
+        [HttpPost]
         public void Insert(String Acronym, String Descryption) {
             try
             {
@@ -68,6 +72,7 @@ namespace TesteNBW.Repository
             }
         }
 
+        [HttpPut]
         public void Update(int id, String Acronym, String Descryption)
         {
             try
@@ -83,6 +88,7 @@ namespace TesteNBW.Repository
             }
         }
 
+        [HttpDelete("{id}")]
         public void Delete(int id)
         {
             try

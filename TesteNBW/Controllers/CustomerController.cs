@@ -23,7 +23,7 @@ namespace TesteNBW.Controllers
         }
 
         [HttpGet]
-        public Customer Get() {
+        public List<Customer> Get() {
             return repository.Get();
         }
 

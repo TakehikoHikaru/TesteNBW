@@ -23,8 +23,29 @@ namespace TesteNBW.Controllers
         [HttpGet]
         public List<Country> Get()
         {
-            //repository.Delete(1);
-            return null; // repository.Get(2);
+            return repository.Get();
+        }
+
+        [HttpGet("id")]
+        public Country Get(int id) {
+            return repository.Get(id);
+        }
+
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            repository.Delete(id);
+        }
+
+        [HttpPost]
+        public void Post(Country country) {
+            repository.Insert(country.Acronym, country.Descryption);
+        }
+
+        [HttpPut]
+        public void Put(Country country)
+        {
+            repository.Update(country.Id,country.Acronym, country.Descryption);
         }
     }
 }
